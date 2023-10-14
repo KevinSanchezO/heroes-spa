@@ -1,7 +1,19 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
+
+    // customHook del router para navegar entre rutas
+    const navigate = useNavigate();
+
+    // Al hacer uso del hook para navegar se le manda la ruta y un objeto
+    // Este objeto que tiene el replace remplaza la ruta en la que me encuentro.
+    const onLogOut = () => {
+        navigate('/login', {
+            replace: true
+        });
+    }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             
@@ -37,7 +49,7 @@ export const Navbar = () => {
                         Kevin
                     </span>
 
-                    <button className='mnav-item nav-link btn'>
+                    <button className='mnav-item nav-link btn' onClick={onLogOut}>
                         Log out
                     </button>
                 </ul>
