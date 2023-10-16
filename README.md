@@ -1,5 +1,5 @@
 # Heroes Spa
 
-## [Live Preview](heroes-spa-19f979.netlify.app)
+## [Live Preview](https://heroes-spa-19f979.netlify.app/marvel)
 
 ![Project Demo Picture](assets/preview.png)
