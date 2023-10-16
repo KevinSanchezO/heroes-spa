@@ -13,9 +13,10 @@ export const HeroPage = () => {
     const navigate = useNavigate(); // custom hook
 
     const onNavigateBack = () => {
-        navigate(`/${hero.publisher === 'Marvel Comics'? 'marvel':'dc'}`, {
-            replace: true
-        });
+        navigate(-1);
+        // navigate(`/${hero.publisher === 'Marvel Comics'? 'marvel':'dc'}`, {
+        //     replace: true
+        // });
     }
 
     // En esta condicion en caso de que el hero que se obtiene del parametro del URL no
