@@ -28,6 +28,31 @@ export const SearchPage = () => {
     navigate(`?q=${searchText}`);
   }
 
+  const showAlert = () => {
+    return (
+      heroes.length === 0 && q.trim() !== ''
+      ?
+        <div className="alert alert-danger">
+          No hero with <b>{q}</b>
+        </div>
+      :
+        <></>
+    )
+  }
+
+  const showInstructionSearch = () => {
+    return (
+      q.trim() === ''
+      ?
+        <div className="alert alert-primary">
+          Search a hero
+        </div>
+      :
+        <></>
+    )
+  }
+
+
   return (
     <>
       <h1>Search Page</h1>
@@ -63,21 +88,16 @@ export const SearchPage = () => {
           <h4> Results </h4>
           <hr/>
 
-          <div className="alert alert-primary">
-            Search a hero
-          </div>
-
           {
-            heroes.length === 0
-            ?
-            <div className="alert alert-danger">
-              No hero with <b>{q}</b>
-            </div>
-            :
-            <></>
+            showInstructionSearch()
           }
 
-          {/* <HeroCard /> */}
+
+          {
+            showAlert()
+          }
+
+
           {
             heroes.map(hero => (
               <HeroCard key={hero.id} {...hero}/>
