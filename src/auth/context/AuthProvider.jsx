@@ -1,7 +1,7 @@
 // Este componente sirve para proover la informacion a toda la aplicacion con el uso del AuthContext
 
 import { useReducer } from "react"
-import { authReducer } from "./AuthReducer"
+import { authReducer } from "./authReducer"
 import { AuthContext } from "./AuthContext";
 import { types } from "../types/types";
 
